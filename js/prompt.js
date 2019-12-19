@@ -8,3 +8,5 @@ if(computer == "mac"){
 }else{
     alert("Dont know? Feel free to browse")
 }
+
+document.write()
