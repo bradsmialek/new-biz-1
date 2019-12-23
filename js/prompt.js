@@ -1,35 +1,56 @@
-var computer;
-var order;
-    
-var welcomePrompt = function(){
+'use strict'
 
-    computer = prompt("Are you looking for a Mac or PC?");
+
+
+var welcomePrompt = function(){
+    
+    
+
+
+}
+
+
+
+
+var order = function (){
+    var quantity;
+    var item;
+    var list= "";
+    var computer = prompt("Are you looking for a Mac or PC?");
+    
 
     while(computer !== "mac" && computer !== "pc"){
-        
         computer = prompt("Please enter mac or pc...");
     }
-    if(computer == "mac" || computer == "pc"){
-        order = prompt("How many would you like?");
+
+    var quantity = prompt("How many do you want?");
+    quantity = Number(quantity);
+
+    while( isNaN(quantity) ){
+        quantity = prompt("Please enter a number...");
+        quantity = Number(quantity);
     }
-        
-}
-        
-
     
+    if(computer === "mac"){
+        alert("You orderdered " + quantity + "Macs");
+        item = '<img src="day9-toolbox.png">';
+    }else if(computer === "pc"){
+        alert("You orderdered " + quantity + "PCs");
+        item = '<img src="day9-toolbox.png">';
+    }else{
+        alert("You should buy something!")
+    }
+    
+    for(var i = 0; i < quantity; i++){
+        list = list + item;
+    }
+    console.log(list);
+    return list;
 
-//     if(computer == "mac"){
-//         alert("Check out our used Macbook Pros!")
-//     }else if(computer == "pc"){
-//         alert("Our used custom computers are our most popular!")
-//     }else{
-//         alert("Dont know? Feel free to browse")
-//     }
-// }
+}
 
-// var showOrder = function(){
-//     var order = prompt("how many do you need?")
- 
-//     while(order)
-// }
-welcomePrompt()
+
+
+// welcomePrompt()   
+// order()
+
